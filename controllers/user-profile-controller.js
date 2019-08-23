@@ -1,12 +1,13 @@
-var Sequelize = require("sequelize");
-var sequelize = require("../config/connection.js");
-var userProfiles = sequelize.define("userProfiles", {
-  userEmail: Sequelize.STRING,
-  userName: Sequelize.STRING,
-  hasgarden: Sequelize.BOOLEAN,
-  summary: Sequelize.STRING
-
-}, {
-  freezeTableName: true
-});
-userProfiles.sync();
+var userProfiles = require("../models/character.js");
+module.exports = function(app){
+    app.get("/api/user-profiles/:user", (req, res) => {
+        const {user} = req.params;
+        userProfiles.findAll({
+            where: {
+                userEmail: user
+            }
+        }).then((result) => {
+            return res.json(result);
+        })
+    })
+}
