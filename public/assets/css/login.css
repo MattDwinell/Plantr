@@ -2,8 +2,22 @@
 #sign-in-wrapper{
     width: 100%;
     text-align: center;
-    background: #00e676;
+    /* background: #00e676; */
 }
 .sign-out{
     float: right;
+}
+#form-wrapper{
+    background-color: #00e676;
+    border: 2px solid #00e676;
+    border-radius: 4px;
+    margin-top: 15vh;
+}
+#sign-in, #register{
+margin-bottom: 1vh;
+}
+body{
+    background-image: url('../images/jungle_login_background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
