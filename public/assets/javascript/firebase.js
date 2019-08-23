@@ -67,12 +67,12 @@ window.onload = function () {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             currentUser = user;
-            console.log(currentUser);
             currentUserEmail = user.email;
-            document.getElementById("welcome-banner").textContent = "Welcome to the Character Creator, " + user.email + "!";
-            console.log(user, user.email);
+            document.getElementById("welcome-banner").textContent = "Welcome to Plantr, " + user.email + "!";
             document.getElementById("sign-in-wrapper").style.display = 'none';
             document.getElementById("app-wrapper").style.display = "block";
+            window.localStorage.setItem('user-email', user.email);
+
         } else {
             console.log("logged out");
             document.getElementById("sign-in-wrapper").style.display = 'block';

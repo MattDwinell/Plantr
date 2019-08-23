@@ -21,3 +21,14 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
+#welcome-banner{
+    text-align: center;
+    color:white;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: 1px solid #00e676;
+    border-radius: 2px;
+    margin: 3px;
+    padding: 5px;
+    opacity: .8;
+}

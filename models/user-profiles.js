@@ -10,3 +10,4 @@ var userProfiles = sequelize.define("userProfiles", {
   freezeTableName: true
 });
 userProfiles.sync();
+module.exports = userProfiles;
