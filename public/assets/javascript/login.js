@@ -28,8 +28,10 @@ function storeUser(){
     xhr.onload = function () {
         if (xhr.status >= 200 && xhr.status < 300) {
             console.log('success!', xhr);
-            if (xhr.response[0]){
-                userAlreadyRegistered();
+            if (xhr.response !== "[]"){
+                console.log(xhr.response);
+                console.log(xhr.response.length);
+              userAlreadyRegistered();
             } else {
                 userRegisterForm();
             }
@@ -39,12 +41,15 @@ function storeUser(){
     };
     xhr.open('GET', '/api/user-profiles/' + userEmail );
     xhr.send();
+}
 //after checking to see if the useremail is already in the system, either useralready registered or userregisterform will load. 
 function userAlreadyRegistered(){
     console.log('user already registered');
+    window.location.assign('/profile')
 }
 
 function userRegisterForm(){
     console.log('user needs to create an account');
+    document.getElementById('register-banner').style.display = 'block';
 
 }

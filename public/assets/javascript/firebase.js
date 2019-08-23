@@ -68,7 +68,7 @@ window.onload = function () {
         if (user) {
             currentUser = user;
             currentUserEmail = user.email;
-            document.getElementById("welcome-banner").textContent = "Welcome to Plantr, " + user.email + "!";
+            document.getElementById("welcome-banner").textContent = "Welcome to PlantR, " + user.email + "!";
             document.getElementById("sign-in-wrapper").style.display = 'none';
             document.getElementById("app-wrapper").style.display = "block";
             window.localStorage.setItem('user-email', user.email);
@@ -78,6 +78,7 @@ window.onload = function () {
             document.getElementById("sign-in-wrapper").style.display = 'block';
             document.getElementById("app-wrapper").style.display = "none";
             document.getElementById("sign-in-message").textContent = "Welcome to PlantR! Please sign in."
+            window.localStorage.clear();
 
         }
     })
