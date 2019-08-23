@@ -1,0 +1,31 @@
+{
+  "name": "plantr",
+  "version": "1.0.0",
+  "description": "app to match gardeners to gardens",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MattDwinell/Plantr.git"
+  },
+  "keywords": [
+    "plantr",
+    "communal",
+    "gardening",
+    "fullstack",
+    "mysql"
+  ],
+  "author": "Matthew Dwinell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MattDwinell/Plantr/issues"
+  },
+  "homepage": "https://github.com/MattDwinell/Plantr#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sequelize": "^5.16.0"
+  }
+}
