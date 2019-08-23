@@ -1,3 +1,9 @@
-body{
+
+#sign-in-wrapper{
+    width: 100%;
     text-align: center;
+    background: #00e676;
+}
+.sign-out{
+    float: right;
 }
