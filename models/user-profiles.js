@@ -9,5 +9,12 @@ var userProfiles = sequelize.define("userProfiles", {
 }, {
   freezeTableName: true
 });
-userProfiles.sync();
+userProfiles.sync().then(
+    userProfiles.create({
+        userEmail: 'testing@gmail.com',
+        userName: 'bob',
+        hasgarden: false,
+        summary: ''
+    })
+);
 module.exports = userProfiles;
