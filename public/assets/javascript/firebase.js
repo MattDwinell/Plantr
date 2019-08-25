@@ -55,7 +55,6 @@ window.onload = function () {
             firebase.auth().signOut();
         }
         else {
-            console.log('did not hit an element with an event listener');
             return false;
         }
     }, false)
@@ -68,7 +67,7 @@ window.onload = function () {
         if (user) {
             currentUser = user;
             currentUserEmail = user.email;
-            document.getElementById("welcome-banner").textContent = "Welcome to PlantR, " + user.email + "!";
+            document.getElementById("welcome-banner").textContent = "Welcome to PlantR, " + user.email + "! Please complete your profile to get started.";
             document.getElementById("sign-in-wrapper").style.display = 'none';
             document.getElementById("app-wrapper").style.display = "block";
             window.localStorage.setItem('user-email', user.email);

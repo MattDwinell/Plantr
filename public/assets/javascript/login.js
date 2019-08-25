@@ -1,12 +1,52 @@
 window.addEventListener('click', function(event){
-     event.preventDefault();
      if(event.target.matches('#sign-in') || (event.target.matches('#register'))){
+        event.preventDefault();
         storageCheck();
+     } else if (event.target.matches("#form-register")){
+         event.preventDefault();
+         userFormSubmit();
+
      } else {
          return false;
      }
      
  }, false)
+
+ function userFormSubmit(){
+     
+const form = document.forms.userform;
+const userName = form.elements.username.value.trim();
+const address = form.elements.address.value.trim();
+const contactEmail = form.elements.contactemail.value.trim();
+const imageUrl = form.elements.imageurl.value.trim();
+const summary = form.elements.summary.value.trim();
+const plants = form.elements.plants.value.trim();
+const hasGarden = form.elements.hasgarden.checked;
+const needsGarden = form.elements.needsgarden.checked;
+const organic = form.elements.organic.checked;
+const pets = form.elements.pets.checked;
+const age = form.elements.age.value;
+const hours = form.elements.hours.value;
+const avatar = form.elements.avatar.value;
+const email = window.localStorage.getItem("user-email");
+let newUser = {
+  email: email,
+  userName: userName,
+  address: address,
+  contactEmail: contactEmail,
+  imageUrl: imageUrl,
+  summary: summary,
+  plants: plants,
+  hasGarden: hasGarden,
+  needsGarden: needsGarden,
+  organic: organic,
+  pets: pets,
+  age: age,
+  hours: hours,
+  avatar: avatar
+} 
+console.log(newUser);
+ }
 
 
 let storageCheck = function(){

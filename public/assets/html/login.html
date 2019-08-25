@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,48 +10,155 @@
     <title>Login</title>
     <link rel="icon" href="/assets/images/plant_pot.jpg">
 </head>
+
 <body>
-        <button class="btn waves-effect waves-light sign-out">Sign out</button>
-        <div class="container" id="sign-in-wrapper">
-            <div class="row" id='sign-in-form'>
-                <div class="col s3">
-                    <img src="/assets/images/trowel.png" height="auto" width="100%">
-                </div>
-                <div class="col s6 blue lighten-5" id="form-wrapper">
-                    <form>
-                        <h5 id="sign-in-message"> APPEND YOUR INFORMATION TO BEGIN, MORTAL.</h4>
-                            <input type="text" placeholder="email" id="email" class="light-green lighten-3">
-                            <input type="password" placeholder="password" id="password" class="light-green lighten-3">
-                            <button class="btn waves-effect waves-light" id="sign-in"> Sign in</button>
-                            <button class="btn waves-effect waves-light" id="register">Register</button>
-                    </form>
-    
-                </div>
-                <div class="col s3">
-                    <img src="/assets/images/vines_right_diag2.png" height="auto" width="100%">
-                </div>
+    <button class="btn waves-effect waves-light sign-out">Sign out</button>
+    <div class="container" id="sign-in-wrapper">
+        <div class="row" id='sign-in-form'>
+            <div class="col s3">
+                <img src="/assets/images/trowel.png" height="auto" width="100%">
+            </div>
+            <div class="col s6 blue lighten-5" id="form-wrapper">
+                <form>
+                    <h5 id="sign-in-message"> APPEND YOUR INFORMATION TO BEGIN, MORTAL.</h4>
+                        <input type="text" placeholder="email" id="email" class="light-green lighten-3">
+                        <input type="password" placeholder="password" id="password" class="light-green lighten-3">
+                        <button class="btn waves-effect waves-light" id="sign-in"> Sign in</button>
+                        <button class="btn waves-effect waves-light" id="register">Register</button>
+                </form>
+
+            </div>
+            <div class="col s3">
+                <img src="/assets/images/vines_right_diag2.png" height="auto" width="100%">
             </div>
         </div>
-        <div class="container" id="app-wrapper">
-                <div class= 'col s12 light-green' id='welcome-banner'> Planting... please wait.</div>
-                <div id='register-wrapper'>
-                    <form class='register-form'>
-                        <p>Please Complete the form below to get started on PlantR!</p>
-                        <div class='row'>
-                            <div class="col s3 register-item">
-                                username: <input type = 'text' placeholder='gardener' name='user-name'>
+    </div>
+    <div id="app-wrapper">
+        <div class='col s12 light-green' id='welcome-banner'> Planting... please wait.</div>
+        <div class='container big-form'>
+
+            <form action="#" id='user-form' name='userform'>
+                <div class=row>
+                    <span class='user col s4'> userName
+                        <input class='user-input' placeholder='other users will see this' name='username' />
+                    </span>
+                    <span class='user col s4'> Address
+                        <input class='user-input' name='address' placeholder='full address, please' />
+                    </span>
+                    <span class='user col s4'> Contact Email
+                        <input class='user-input' placeholder='example@gmail.com' name='contactemail' />
+                    </span>
+                    <span class='user col s4'> image Url
+                        <input class='user-input' placeholder='https://example.giyazo.com' name='imageurl' />
+                    </span>
+
+                </div>
+                <div class="row">
+                    <span class='user-text col s6'>Write a Short Summary about yourself!
+                        <textarea rows="4" cols="50" class='user-input' name='summary' maxlength='500'
+                            placeholder='I like to garden because...'>
+                              </textarea>
+                    </span>
+                    <span class='user-text col s6'>List a few of the plants you'd like to see in a garden
+                        <input class='user-input' name='plants' maxlength='100'
+                            placeholder='beans or pineapples or pumpkins... etc' />
+                    </span>
+                </div>
+                <div class="row">
+                    <div class="col s3">
+                        <label>
+                            <input type="checkbox" name="hasgarden" class="filled-in" />
+                            <span>I have a garden </span>
+                        </label>
+                        <div>
+
+                        </div>
+                    </div>
+                    <div class="col s3">
+                        <label>
+                            <input type="checkbox" class="filled-in" name="needsgarden" />
+                            <span>I'm looking for a garden </span>
+                        </label>
+
+                        <div>
+
+                        </div>
+                    </div>
+                    <div class="col s3">
+                        <label>
+                            <input name="organic" type="checkbox" class="filled-in" />
+                            <span>Organic methods only </span>
+                        </label>
+
+                        <div>
+
+                        </div>
+                    </div>
+                    <div class="col s3">
+                        <label>
+                            <input name="pets" type="checkbox" class="filled-in" />
+                            <span>Pet Friendly </span>
+                        </label>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class='row'>
+                    <span class='user-nums col s2'> Age
+                        <input class='user-input' type='number' name='age' />
+                    </span>
+                    <span class='user-nums col s2'> hours available per week
+                        <input class='user-input' type='number' name='hours' />
+                    </span>
+                    <div class="col s6"> Choose an avatar!
+                        <div class=row>
+                            <div class="col s3">
+                                <label>
+                                    <input name="avatar" type="radio" value="spade" checked />
+                                    <span>Spade</span>
+                                </label>
+                                <img class='avatar-img' src="/assets/images/trowel.png" alt='spade' />
+                            </div>
+                            <div class="col s3">
+                                <label>
+                                    <input name="avatar" value="pot" type="radio" />
+                                    <span>pot</span>
+                                </label>
+                                <img class='avatar-img' src="/assets/images/pot.png" alt='pot' />
+                            </div>
+                            <div class="col s3">
+                                <label>
+                                    <input name="avatar" value="rake" type="radio" />
+                                    <span>rake</span>
+                                </label>
+                                <img class='avatar-img rake' src="/assets/images/rake.png" alt='rake' />
+                            </div>
+                            <div class="col s3">
+                                <label>
+                                    <input type="radio" value="pail" name="avatar" />
+                                    <span> pail </span>
+                                </label>
+                                <img class='avatar-img' src="/assets/images/garden_pail.png" alt='pail' />
                             </div>
                         </div>
 
-
-                    </form>
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="col s12">
+                        <a class="waves-effect waves-light btn" id='form-register'>Complete Registration</a>
+                    </div>
+                </div>
+            </form>
         </div>
 
+    </div>
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
     <script src='/assets/javascript/login.js'></script>
     <script src='/assets/javascript/firebase.js'></script>
