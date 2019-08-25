@@ -35,3 +35,7 @@ body{
 #register-banner{
     display:none;
 }
+.register-item{
+    display: inline-block;
+    background-color: #00e676;
+}

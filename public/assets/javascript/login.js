@@ -1,6 +1,4 @@
- console.log('log in connected');
-
- window.addEventListener('click', function(event){
+window.addEventListener('click', function(event){
      event.preventDefault();
      if(event.target.matches('#sign-in') || (event.target.matches('#register'))){
         storageCheck();
