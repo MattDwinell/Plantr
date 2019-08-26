@@ -67,17 +67,21 @@ window.onload = function () {
         if (user) {
             currentUser = user;
             currentUserEmail = user.email;
+            if(document.getElementById("welcome-banner")){
             document.getElementById("welcome-banner").textContent = "Welcome to PlantR, " + user.email + "! Please complete your profile to get started.";
             document.getElementById("sign-in-wrapper").style.display = 'none';
             document.getElementById("app-wrapper").style.display = "block";
             window.localStorage.setItem('user-email', user.email);
+            }
 
         } else {
             console.log("logged out");
+            if(document.getElementById("sign-in-wrapper")){
             document.getElementById("sign-in-wrapper").style.display = 'block';
             document.getElementById("app-wrapper").style.display = "none";
             document.getElementById("sign-in-message").textContent = "Welcome to PlantR! Please sign in."
             window.localStorage.clear();
+            }
 
         }
     })

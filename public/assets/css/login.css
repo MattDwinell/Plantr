@@ -19,7 +19,20 @@ margin-bottom: 1vh;
 body{
     background-image: url('../images/jungle_login_background.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
+    opacity: 1;
+    transition: 1s opacity;
+}
+
+
+
+body.fade-out {
+  opacity: 0;
+  transition: none;
+}
+body.faded-out{
+  opacity: 0;
+  transition: 1s opacity;
 }
 #welcome-banner{
     text-align: center;
