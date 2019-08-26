@@ -7,7 +7,7 @@ var userProfiles = sequelize.define("userProfiles", {
     address: Sequelize.STRING,
     imageUrl: Sequelize.STRING,
     summary: Sequelize.TEXT,
-    plants: Sequelize.BOOLEAN,
+    plants: Sequelize.STRING,
     hasGarden: Sequelize.BOOLEAN,
     needsGarden: Sequelize.BOOLEAN,
     organic: Sequelize.BOOLEAN,
@@ -17,7 +17,7 @@ var userProfiles = sequelize.define("userProfiles", {
     avatar: Sequelize.STRING
 
 }, {
-  freezeTableName: true
+  freezeTableName: false
 });
 userProfiles.sync().then(
     userProfiles.create({
@@ -27,7 +27,7 @@ userProfiles.sync().then(
         address: 'address',
         imageUrl: 'imageUrl',
         summary: 'summary goes here',
-        plants: false,
+        plants: 'carrots and stuff',
         hasGarden: true,
         needsGarden: false,
         organic: true,

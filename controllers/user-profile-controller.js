@@ -4,15 +4,16 @@ module.exports = function(app){
         const {user} = req.params;
         userProfiles.findAll({
             where: {
-                userEmail: user
+                email: user
             }
         }).then((result) => {
             return res.json(result);
         })
     })
 
-    app.get("/api/new-user", (req, res)=>{
+    app.post("/api/new-user", (req, res)=>{
         const {email, userName, address, contactEmail, imageUrl, summary, plants, hasGarden, needsGarden, organic, pets, age, hours, avatar} = req.body;
+        console.log(plants, hasGarden, needsGarden, organic);
     userProfiles.create({
         email: email,
         contactEmail: contactEmail,
@@ -28,6 +29,9 @@ module.exports = function(app){
         age: age,
         hours: hours,
         avatar: avatar
+    })
+    .then((result)=>{
+        return res.json(result);
     })
     })
 }
