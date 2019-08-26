@@ -46,9 +46,35 @@ let newUser = {
   avatar: avatar
 } 
 console.log(newUser);
+
+if(!userName){
+    alert('please complete the username field');
+    return false;
+}
+if(!address){
+    alert('Please input a valid address so you can find others in your area.');
+    return false;
+}
+if(!contactEmail){
+    alert('Please input a valid contact email address');
+    return false;
+}
+if(!age){
+    alert('Please input your age');
+    return false;
+}
+if(!hours){
+    alert('please estimate the number of hours you have/ would need for gardening each week');
+    return false;
+}
+
+
+//code for ajax post request will start here
+
  }
 
 
+ 
 let storageCheck = function(){
     if(window.localStorage.getItem('user-email')){
         storeUser();
