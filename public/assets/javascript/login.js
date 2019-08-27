@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     fadeIn();
-
+setTimeout(() => {
+    storeUser();
+}, 1000);
 
 function fadeIn() {
     let element = document.getElementById("body");

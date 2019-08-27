@@ -16,6 +16,13 @@ module.exports = function(app) {
   app.get("/profile", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/assets/html/profile.html"));
   });
+  app.get("/open-posts", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/assets/html/open-posts.html"));
+  });
+  app.get("/search", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/assets/html/search.html"));
+  });
+  
 
 //   app.get("/assets/html/maker", function(req, res) {
 //     res.sendFile(path.join(__dirname, "../public/assets/html/maker.html"));
