@@ -1,3 +1,16 @@
 .nav-wrapper{
     background-color: #4e342e;
 }
+.container{
+    border: 2px solid #4e342e;
+    padding: 5px;
+    margin: 5vh auto;
+    background-color: white;
+}
+p, h3{
+    padding-left: 4%;
+    padding-right: 1%;
+}
+body{
+    background-color: #c5e1a5;
+}
