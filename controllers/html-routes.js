@@ -22,6 +22,9 @@ module.exports = function(app) {
   app.get("/search", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/assets/html/search.html"));
   });
+  app.get("/about", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/assets/html/about.html"));
+  });
   
 
 //   app.get("/assets/html/maker", function(req, res) {
