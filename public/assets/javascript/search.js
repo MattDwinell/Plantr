@@ -53,7 +53,7 @@ function apiSearch(searchObject){
         if (xhr.status >= 200 && xhr.status < 300) {
             console.log('success!', xhr);
             if (xhr.response !== "[]") {
-                console.log(xhr.response)
+                console.log(JSON.parse(xhr.response));
             } else {
                 noMatches();
             }

@@ -1,4 +1,5 @@
 var userProfiles = require("../models/user-profiles.js");
+const Sequelize = require('sequelize');
 module.exports = function(app){
     app.get("/api/user-profiles/:user", (req, res) => {
         const {user} = req.params;
@@ -54,10 +55,10 @@ module.exports = function(app){
         console.log(userEmail, distance);
         userProfiles.findAll({
             where:{
-                garden: garden,
+                hasGarden: garden,
                 organic: organic,
                 pets:pets,
-                email: {$not: userEmail}
+                email: {[Sequelize.Op.not]: userEmail}
             }
         })
         .then((result)=>{
