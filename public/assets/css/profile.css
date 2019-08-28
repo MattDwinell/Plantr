@@ -30,6 +30,10 @@ body{
      border-radius:5px;
     height: 20vh;
   }
+  .profile-text{
+    background-color: #b2dfdb;
+
+  }
   .avatar-img{
     width:100%;
     max-height: 18vh;
@@ -58,4 +62,7 @@ body{
     background-color: #b2dfdb;
     border: 1px solid #1de9b6;
     border-radius:5px;
+  }
+  .tertiary{
+      margin:1%;
   }
