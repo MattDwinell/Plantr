@@ -76,3 +76,9 @@ body{
       color: brown;
       opacity: 1;
   }
+  #avatar-options-row{
+      display:none;
+  }
+  #cancel, #confirm{
+      display: none;
+  }

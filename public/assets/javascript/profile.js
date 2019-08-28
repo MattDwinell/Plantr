@@ -149,7 +149,12 @@ document.addEventListener("DOMContentLoaded", () => {
     //adding event listeners to click events
 document.addEventListener("click", (event)=>{
 if(event.target.matches("#edit")){
+    event.preventDefault();
 enableEditing(userObject);
+} else if (event.target.matches("#cancel")){
+    event.preventDefault();
+    cancelEditing();
+
 } else {
     return false;
 }
@@ -160,7 +165,7 @@ function enableEditing(obj){
     let userNameContext = document.createElement('p');
     userNameContext.textContent = 'Username: ';
     let userNameInput = document.createElement("input");
-    userNameInput.setAttribute("placeholder", obj.userName);
+    userNameInput.setAttribute("value", obj.userName);
     userNameInput.setAttribute("name", "username");
     userNameInput.classList.add('user-input'); 
     document.getElementById("user-name").append(userNameContext, userNameInput);
@@ -168,7 +173,7 @@ function enableEditing(obj){
     let addressContext = document.createElement('p');
     addressContext.textContent = 'Address: ';
     let addressInput = document.createElement("input");
-    addressInput.setAttribute("placeholder", obj.address);
+    addressInput.setAttribute("value", obj.address);
     addressInput.setAttribute("name", "address");
     addressInput.classList.add('user-input'); 
     document.getElementById("address").append(addressContext, addressInput);
@@ -176,7 +181,7 @@ function enableEditing(obj){
     let emailContext = document.createElement('p');
     emailContext.textContent = 'contact Email: ';
     let emailInput = document.createElement("input");
-    emailInput.setAttribute("placeholder", obj.contactEmail);
+    emailInput.setAttribute("value", obj.contactEmail);
     emailInput.setAttribute("name", "contactEmail");
     emailInput.classList.add('user-input'); 
     document.getElementById("contact-email").append(emailContext, emailInput);
@@ -184,7 +189,7 @@ function enableEditing(obj){
     let imgContext = document.createElement('p');
     imgContext.textContent = 'image Url: ';
     let imgUrlInput = document.createElement("input");
-    imgUrlInput.setAttribute("placeholder", obj.imageUrl);
+    imgUrlInput.setAttribute("value", obj.imageUrl);
     imgUrlInput.setAttribute("name", "imgUrl");
     imgUrlInput.classList.add('user-input'); 
     document.getElementById("img-url").append(imgContext, imgUrlInput);
@@ -218,8 +223,79 @@ function enableEditing(obj){
     gardenLabel.append(gardenInput, gardenContext);
     document.getElementById("has-garden").append(gardenLabel);
 
-}
+    let needsGardenLabel = document.createElement("label");
+    let needsGardenContext = document.createElement("span");
+    needsGardenContext.textContent = "I need a garden";
+    let needsGardenInput = document.createElement("input");
+    needsGardenInput.setAttribute("type", "checkbox");
+    needsGardenInput.setAttribute("name", "needsgarden");
+    needsGardenInput.classList.add("filled-in");
+    needsGardenLabel.append(needsGardenInput, needsGardenContext);
+    document.getElementById("needs-garden").append(needsGardenLabel);
 
+    let organicLabel = document.createElement("label");
+    let organicContext = document.createElement("span");
+    organicContext.textContent = "Organic produce only";
+    let organicInput = document.createElement("input");
+    organicInput.setAttribute("type", "checkbox");
+    organicInput.setAttribute("name", "organic");
+    organicInput.classList.add("filled-in");
+    organicLabel.append(organicInput, organicContext);
+    document.getElementById("organic").append(organicLabel);
+
+    let petsLabel = document.createElement("label");
+    let petsContext = document.createElement("span");
+    petsContext.textContent = "pet friendly";
+    let petsInput = document.createElement("input");
+    petsInput.setAttribute("type", "checkbox");
+    petsInput.setAttribute("name", "pets");
+    petsInput.classList.add("filled-in");
+    petsLabel.append(petsInput, petsContext);
+    document.getElementById("pets").append(petsLabel);
+
+    let ageContext = document.createElement('p');
+    ageContext.textContent = 'Age: ';
+    let ageInput = document.createElement("input");
+    ageInput.setAttribute("placeholder", obj.age);
+    ageInput.setAttribute("name", "age");
+    ageInput.classList.add('user-input'); 
+    document.getElementById("age").append(ageContext, ageInput);
+
+    let hoursContext = document.createElement('p');
+    hoursContext.textContent = 'Hours available/needed: ';
+    let hoursInput = document.createElement("input");
+    hoursInput.setAttribute("placeholder", obj.contactEmail);
+    hoursInput.setAttribute("name", "hours");
+    hoursInput.classList.add('user-input'); 
+    document.getElementById("hours").append(hoursContext, hoursInput);
+
+    let avatarDisplayWrapper = document.getElementById('user-display-row');
+    avatarDisplayWrapper.style.display = "none";
+    // while (avatarDisplayWrapper.firstChild) avatarDisplayWrapper.removeChild(avatarDisplayWrapper.firstChild);
+    let avatarRow = document.getElementById("avatar-options-row");
+    avatarRow.style.display = "inline-block";
+    let cancelButton = document.getElementById("cancel");
+    let confirmButton = document.getElementById("confirm");
+    let editButton = document.getElementById('edit');
+    editButton.style.display="none";
+    cancelButton.style.display="inline-block";
+    confirmButton.style.display="inline-block";
+}
+function cancelEditing(){
+    let avatarDisplayWrapper = document.getElementById('user-display-row');
+    avatarDisplayWrapper.style.display = "inline-block";
+    // while (avatarDisplayWrapper.firstChild) avatarDisplayWrapper.removeChild(avatarDisplayWrapper.firstChild);
+    let avatarRow = document.getElementById("avatar-options-row");
+    avatarRow.style.display = "none";
+    let cancelButton = document.getElementById("cancel");
+    let confirmButton = document.getElementById("confirm");
+    let editButton = document.getElementById('edit');
+    editButton.style.display="inline-block";
+    cancelButton.style.display="none";
+    confirmButton.style.display="none";
+    profileCall();
+
+}
 
 
 
