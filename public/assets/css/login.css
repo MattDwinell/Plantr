@@ -4,6 +4,10 @@
     text-align: center;
     /* background: #00e676; */
 }
+.nav-wrapper{
+  background-color: #4e342e;
+
+}
 .sign-out{
     float: right;
 }
@@ -17,9 +21,7 @@
 margin-bottom: 1vh;
 }
 body{
-    background-image: url('../images/jungle_login_background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat; 
+  background-color:#8d6e63;
     opacity: 1;
     transition: 1s opacity;
 }

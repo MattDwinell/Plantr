@@ -63,13 +63,15 @@
    .user-name, .summary, .plant{
        padding: 4px;
        color: #efebe9;
+       width: 100%;
+       float:left;
    }
    body{
     background-color:#8d6e63;
    }
 
 
-   
+
    .card-wrapper:hover{
        cursor: pointer;
    }
