@@ -37,17 +37,17 @@ module.exports = function(app){
     })
     app.get('/api/search/:userEmail/:distance/:garden/:organic/:pets', (req,res)=>{
         let {userEmail, distance, garden, organic, pets} = req.params;
-        if(garden === 'true'){
+        if(garden == 'true'){
             garden = true;
         } else {
             garden = false;
         }
-        if(organic === 'true'){
+        if(organic == 'true'){
             organic = true;
         } else {
             organic = false;
         }
-        if(pets === 'true'){
+        if(pets == 'true'){
             pets = true;
         } else {
             pets = false;

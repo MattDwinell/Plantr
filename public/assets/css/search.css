@@ -1,5 +1,6 @@
 .nav-wrapper{
     background-color: #4e342e;
+
 }
 *{
     box-sizing: border-box;
@@ -8,13 +9,18 @@
     margin-top: 5px;
    }
 .nav{
-   background-color: #bcaaa4 ;
+    margin-top: 5px;
+    border: 1px solid #d7ccc8;
+    border-radius: 5px;
+   background-color: #d7ccc8;
+   font-weight: bold;
    }
 .nav-bar{
     height: 10vh;
      margin-top: 10px;
    text-align: center;
      background-color: #d7ccc8;
+
    }
 #distance, #garden{
        display: inline;
@@ -24,4 +30,46 @@
    }
 .distance-wrapper{
        margin-top: 1.5vh;
+   }
+   .no-results{
+       border-bottom: 1px solid #bcaaa4;
+   }
+   .card-wrapper{
+       color:#efebe9;
+       font-weight: bold;
+       background-color: #1b5e20;
+       margin: 5px;
+       border: 2px solid #4e342e;
+       border-radius: 3px;
+       width: 23%;
+       display: inline-block;
+   }
+   .card-img{
+       padding-right: 10px;
+       max-width: 100%;
+       height: auto;
+       max-height: 100%;
+   }
+   .img-wrapper{
+       float: right;
+       width: 50%;
+       height: 20vh;
+   }
+   .plants, .summary{
+       overflow: hidden;
+       max-height: 10vh;
+       max-width: 50%;
+   }
+   .user-name, .summary, .plant{
+       padding: 4px;
+       color: #efebe9;
+   }
+   body{
+    background-color:#8d6e63;
+   }
+
+
+   
+   .card-wrapper:hover{
+       cursor: pointer;
    }
