@@ -35,7 +35,7 @@ module.exports = function(app){
     })
     })
     app.get('/api/search/:userEmail/:distance/:garden/:organic/:pets', (req,res)=>{
-        const {userEmail, distance, garden, organic, pets} = req.params;
+        let {userEmail, distance, garden, organic, pets} = req.params;
         if(garden === 'true'){
             garden = true;
         } else {
