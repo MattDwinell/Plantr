@@ -36,7 +36,33 @@ module.exports = function(app){
     })
     app.get('/api/search/:userEmail/:distance/:garden/:organic/:pets', (req,res)=>{
         const {userEmail, distance, garden, organic, pets} = req.params;
+        if(garden === 'true'){
+            garden = true;
+        } else {
+            garden = false;
+        }
+        if(organic === 'true'){
+            organic = true;
+        } else {
+            organic = false;
+        }
+        if(pets === 'true'){
+            pets = true;
+        } else {
+            pets = false;
+        }
         console.log(userEmail, distance);
-        return ('hit route')
+        userProfiles.findAll({
+            where:{
+                garden: garden,
+                organic: organic,
+                pets:pets,
+                email: {$not: userEmail}
+            }
+        })
+        .then((result)=>{
+            return res.json(result);
+        })
+        
     })
 }
