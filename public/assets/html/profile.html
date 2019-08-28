@@ -1,34 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
-    <link rel="stylesheet" href="/assets/css/profile.css" type="text/css">
-    <title>Profile</title>
-    <link rel="icon" href="/assets/images/plant_pot.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+  <link rel="stylesheet" href="/assets/css/profile.css" type="text/css">
+  <title>Profile</title>
+  <link rel="icon" href="/assets/images/plant_pot.jpg">
 </head>
+
 <body>
-    <nav>
-        <div class="nav-wrapper">
-          <a href="/about" class="brand-logo">PlantR</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li class="active"><a  href="/profile">Profile</a></li>
-            <li><a href="/open-posts">public posts</a></li>
-            <li><a href="/search">Find users</a></li>
-            <li><a href="/login" class="sign-out"> Logout</a></li>
-          </ul>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/about" class="brand-logo">PlantR</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li class="active"><a href="/profile">Profile</a></li>
+        <li><a href="/open-posts">public posts</a></li>
+        <li><a href="/search">Find users</a></li>
+        <li><a href="/login" class="sign-out"> Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div id='profile-wrapper'>
+      <div class="row">
+        <span class='user col s4'> userName:
+          <p>loading...</p>
+        </span>
+        <span class='user col s4'> Address:
+          <p>loading...</p>
+        </span>
+        <span class='user col s4'> Contact Email:
+          <p>loading...</p>
+        </span>
+        <span class='user col s4'> image Url:
+          <p>loading...</p>
+        </span>
+      </div>
+      <div class="row">
+        <span class='user-text col s6'>User Summary:
+          <p rows="3">loading...</p>
+        </span>
+        <span class='user-text col s6'>Plant preferences:
+          <p>loading...</p>
+        </span>
+      </div>
+      <div class="row booleans">
+        <div class="col s3">
+          <p>have a garden: loading...</p>
+          <div>
+
+          </div>
         </div>
-      </nav>
+        <div class="col s3">
+          <p>Looking for a garden: loading...</p>
+          <div>
+
+          </div>
+        </div>
+        <div class="col s3">
+          <p>organic produce only? loading...</p>
+        </div>
+        <div class="col s3">
+          <p>Pet friendly: loading...</p>
+
+
+        </div>
+      </div>
+      <div class="row">
+        <span class='user-nums col s2'> Age:
+          <p>loading...</p>
+        </span>
+        <span class='user-nums col s2'> hours available per week:
+          <p>loading...</p>
+        </span>
+
+        <span class="col s6" id='avatar-img-wrapper'>
+          Avatar:
+          <div class="row">
+            <div class="col s3" >
+              <img class='avatar-img' src="/assets/images/pot.png">
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="row btn-holder">
+        <btn class="btn waves-effect waves-light" id="edit">Edit Profile</btn>
+      </div>
+    </div>
+  </div>
 
 
 
-
-    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
-    <script src='/assets/javascript/profile.js'></script>
-    <script src='/assets/javascript/firebase.js'></script>
-    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+  <script src='/assets/javascript/profile.js'></script>
+  <script src='/assets/javascript/firebase.js'></script>
+  <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
 </body>
+
 </html>
