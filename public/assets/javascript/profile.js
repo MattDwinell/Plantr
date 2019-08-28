@@ -155,6 +155,9 @@ enableEditing(userObject);
     event.preventDefault();
     cancelEditing();
 
+} else if (event.target.matches("#confirm")){
+    event.preventDefault();
+    confirmEdits();
 } else {
     return false;
 }
@@ -294,7 +297,39 @@ function cancelEditing(){
     cancelButton.style.display="none";
     confirmButton.style.display="none";
     profileCall();
+}
 
+function confirmEdits(){
+    console.log(userObject);
+    let userName = document.getElementById('user-name').lastChild.value;
+    let address = document.getElementById('address').lastChild.value;
+    let contactEmail = document.getElementById('contact-email').lastChild.value;
+    let imgUrl = document.getElementById('img-url').lastChild.value;
+    let summary = document.getElementById('summary').lastChild.value;
+    let plants = document.getElementById('plants').lastChild.value;
+    let hasGarden = document.getElementById("has-garden").firstChild.firstChild.checked;
+    let needsGarden = document.getElementById("needs-garden").firstChild.firstChild.checked;
+    let organic = document.getElementById("organic").firstChild.firstChild.checked;
+    let pets = document.getElementById("pets").firstChild.firstChild.checked;
+    let age = document.getElementById('age').lastChild.value;
+    let hours = document.getElementById('hours').lastChild.value;
+    let avatar = document.querySelector('input[name="avatar"]:checked').value;
+
+    userObject.userName = userName;
+    userObject.address = address;
+    userObject.contactEmail = contactEmail;
+    userObject.imgUrl = imgUrl;
+    userObject.summary= summary;
+    userObject.plants = plants;
+    userObject.hasGarden = hasGarden;
+    userObject.needsGarden = needsGarden;
+    userObject.organic = organic;
+    userObject.pets = pets;
+    userObject.age = age;
+    userObject.hours = hours;
+    userObject.avatar= avatar;
+
+    console.log(userObject);
 }
 
 
