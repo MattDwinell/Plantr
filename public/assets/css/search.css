@@ -1,3 +1,27 @@
 .nav-wrapper{
     background-color: #4e342e;
 }
+*{
+    box-sizing: border-box;
+}
+#search{
+    margin-top: 5px;
+   }
+.nav{
+   background-color: #bcaaa4 ;
+   }
+.nav-bar{
+    height: 10vh;
+     margin-top: 10px;
+   text-align: center;
+     background-color: #d7ccc8;
+   }
+#distance, #garden{
+       display: inline;
+   }
+.orgo-only, .pets-only{
+       margin-top: 4vh;
+   }
+.distance-wrapper{
+       margin-top: 1.5vh;
+   }
