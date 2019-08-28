@@ -34,4 +34,9 @@ module.exports = function(app){
         return res.json(result);
     })
     })
+    app.get('/api/search/:userEmail/:distance/:garden/:organic/:pets', (req,res)=>{
+        const {userEmail, distance, garden, organic, pets} = req.params;
+        console.log(userEmail, distance);
+        return ('hit route')
+    })
 }
