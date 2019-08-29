@@ -147,191 +147,218 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //adding event listeners to click events
-document.addEventListener("click", (event)=>{
-if(event.target.matches("#edit")){
-    event.preventDefault();
-enableEditing(userObject);
-} else if (event.target.matches("#cancel")){
-    event.preventDefault();
-    cancelEditing();
+    document.addEventListener("click", (event) => {
+        if (event.target.matches("#edit")) {
+            event.preventDefault();
+            enableEditing(userObject);
+        } else if (event.target.matches("#cancel")) {
+            event.preventDefault();
+            cancelEditing();
 
-} else if (event.target.matches("#confirm")){
-    event.preventDefault();
-    confirmEdits();
-} else {
-    return false;
-}
-})
-function enableEditing(obj){
-    console.log(obj);
-    divEmpty();
-    let userNameContext = document.createElement('p');
-    userNameContext.textContent = 'Username: ';
-    let userNameInput = document.createElement("input");
-    userNameInput.setAttribute("value", obj.userName);
-    userNameInput.setAttribute("name", "username");
-    userNameInput.classList.add('user-input'); 
-    document.getElementById("user-name").append(userNameContext, userNameInput);
+        } else if (event.target.matches("#confirm")) {
+            event.preventDefault();
+            confirmEdits();
+        } else {
+            return false;
+        }
+    })
+    function enableEditing(obj) {
+        console.log(obj);
+        divEmpty();
+        let userNameContext = document.createElement('p');
+        userNameContext.textContent = 'Username: ';
+        let userNameInput = document.createElement("input");
+        userNameInput.setAttribute("value", obj.userName);
+        userNameInput.setAttribute("name", "username");
+        userNameInput.classList.add('user-input');
+        document.getElementById("user-name").append(userNameContext, userNameInput);
 
-    let addressContext = document.createElement('p');
-    addressContext.textContent = 'Address: ';
-    let addressInput = document.createElement("input");
-    addressInput.setAttribute("value", obj.address);
-    addressInput.setAttribute("name", "address");
-    addressInput.classList.add('user-input'); 
-    document.getElementById("address").append(addressContext, addressInput);
+        let addressContext = document.createElement('p');
+        addressContext.textContent = 'Address: ';
+        let addressInput = document.createElement("input");
+        addressInput.setAttribute("value", obj.address);
+        addressInput.setAttribute("name", "address");
+        addressInput.classList.add('user-input');
+        document.getElementById("address").append(addressContext, addressInput);
 
-    let emailContext = document.createElement('p');
-    emailContext.textContent = 'contact Email: ';
-    let emailInput = document.createElement("input");
-    emailInput.setAttribute("value", obj.contactEmail);
-    emailInput.setAttribute("name", "contactEmail");
-    emailInput.classList.add('user-input'); 
-    document.getElementById("contact-email").append(emailContext, emailInput);
-    
-    let imgContext = document.createElement('p');
-    imgContext.textContent = 'image Url: ';
-    let imgUrlInput = document.createElement("input");
-    imgUrlInput.setAttribute("value", obj.imageUrl);
-    imgUrlInput.setAttribute("name", "imgUrl");
-    imgUrlInput.classList.add('user-input'); 
-    document.getElementById("img-url").append(imgContext, imgUrlInput);
+        let emailContext = document.createElement('p');
+        emailContext.textContent = 'contact Email: ';
+        let emailInput = document.createElement("input");
+        emailInput.setAttribute("value", obj.contactEmail);
+        emailInput.setAttribute("name", "contactEmail");
+        emailInput.classList.add('user-input');
+        document.getElementById("contact-email").append(emailContext, emailInput);
 
-    let summaryContext = document.createElement("p");
-    summaryContext.textContent = 'Summary: ';
-    let summaryInput = document.createElement("textarea");
-    summaryInput.setAttribute('name', 'summary');
-    summaryInput.setAttribute('maxlength', '500');
-    summaryInput.classList.add('user-input');
-    summaryInput.textContent = obj.summary;
-    document.getElementById('summary').append(summaryContext, summaryInput);
+        let imgContext = document.createElement('p');
+        imgContext.textContent = 'image Url: ';
+        let imgUrlInput = document.createElement("input");
+        imgUrlInput.setAttribute("value", obj.imageUrl);
+        imgUrlInput.setAttribute("name", "imgUrl");
+        imgUrlInput.classList.add('user-input');
+        document.getElementById("img-url").append(imgContext, imgUrlInput);
 
-    let plantContext = document.createElement("p");
-    plantContext.textContent = 'plant preferences: ';
-    let plantInput = document.createElement("textarea");
-    plantInput.setAttribute('name', 'plants');
-    plantInput.setAttribute('maxlength', '500');
-    plantInput.classList.add('user-input');
-    plantInput.textContent = obj.plants;
-    document.getElementById('plants').append(plantContext, plantInput);
-    
+        let summaryContext = document.createElement("p");
+        summaryContext.textContent = 'Summary: ';
+        let summaryInput = document.createElement("textarea");
+        summaryInput.setAttribute('name', 'summary');
+        summaryInput.setAttribute('maxlength', '500');
+        summaryInput.classList.add('user-input');
+        summaryInput.textContent = obj.summary;
+        document.getElementById('summary').append(summaryContext, summaryInput);
 
-    let gardenLabel = document.createElement("label");
-    let gardenContext = document.createElement("span");
-    gardenContext.textContent = "I have a garden";
-    let gardenInput = document.createElement("input");
-    gardenInput.setAttribute("type", "checkbox");
-    gardenInput.setAttribute("name", "hasgarden");
-    gardenInput.classList.add("filled-in");
-    gardenLabel.append(gardenInput, gardenContext);
-    document.getElementById("has-garden").append(gardenLabel);
+        let plantContext = document.createElement("p");
+        plantContext.textContent = 'plant preferences: ';
+        let plantInput = document.createElement("textarea");
+        plantInput.setAttribute('name', 'plants');
+        plantInput.setAttribute('maxlength', '500');
+        plantInput.classList.add('user-input');
+        plantInput.textContent = obj.plants;
+        document.getElementById('plants').append(plantContext, plantInput);
 
-    let needsGardenLabel = document.createElement("label");
-    let needsGardenContext = document.createElement("span");
-    needsGardenContext.textContent = "I need a garden";
-    let needsGardenInput = document.createElement("input");
-    needsGardenInput.setAttribute("type", "checkbox");
-    needsGardenInput.setAttribute("name", "needsgarden");
-    needsGardenInput.classList.add("filled-in");
-    needsGardenLabel.append(needsGardenInput, needsGardenContext);
-    document.getElementById("needs-garden").append(needsGardenLabel);
 
-    let organicLabel = document.createElement("label");
-    let organicContext = document.createElement("span");
-    organicContext.textContent = "Organic produce only";
-    let organicInput = document.createElement("input");
-    organicInput.setAttribute("type", "checkbox");
-    organicInput.setAttribute("name", "organic");
-    organicInput.classList.add("filled-in");
-    organicLabel.append(organicInput, organicContext);
-    document.getElementById("organic").append(organicLabel);
+        let gardenLabel = document.createElement("label");
+        let gardenContext = document.createElement("span");
+        gardenContext.textContent = "I have a garden";
+        let gardenInput = document.createElement("input");
+        gardenInput.setAttribute("type", "checkbox");
+        gardenInput.setAttribute("name", "hasgarden");
+        gardenInput.classList.add("filled-in");
+        gardenLabel.append(gardenInput, gardenContext);
+        document.getElementById("has-garden").append(gardenLabel);
 
-    let petsLabel = document.createElement("label");
-    let petsContext = document.createElement("span");
-    petsContext.textContent = "pet friendly";
-    let petsInput = document.createElement("input");
-    petsInput.setAttribute("type", "checkbox");
-    petsInput.setAttribute("name", "pets");
-    petsInput.classList.add("filled-in");
-    petsLabel.append(petsInput, petsContext);
-    document.getElementById("pets").append(petsLabel);
+        let needsGardenLabel = document.createElement("label");
+        let needsGardenContext = document.createElement("span");
+        needsGardenContext.textContent = "I need a garden";
+        let needsGardenInput = document.createElement("input");
+        needsGardenInput.setAttribute("type", "checkbox");
+        needsGardenInput.setAttribute("name", "needsgarden");
+        needsGardenInput.classList.add("filled-in");
+        needsGardenLabel.append(needsGardenInput, needsGardenContext);
+        document.getElementById("needs-garden").append(needsGardenLabel);
 
-    let ageContext = document.createElement('p');
-    ageContext.textContent = 'Age: ';
-    let ageInput = document.createElement("input");
-    ageInput.setAttribute("placeholder", obj.age);
-    ageInput.setAttribute("name", "age");
-    ageInput.classList.add('user-input'); 
-    document.getElementById("age").append(ageContext, ageInput);
+        let organicLabel = document.createElement("label");
+        let organicContext = document.createElement("span");
+        organicContext.textContent = "Organic produce only";
+        let organicInput = document.createElement("input");
+        organicInput.setAttribute("type", "checkbox");
+        organicInput.setAttribute("name", "organic");
+        organicInput.classList.add("filled-in");
+        organicLabel.append(organicInput, organicContext);
+        document.getElementById("organic").append(organicLabel);
 
-    let hoursContext = document.createElement('p');
-    hoursContext.textContent = 'Hours available/needed: ';
-    let hoursInput = document.createElement("input");
-    hoursInput.setAttribute("placeholder", obj.contactEmail);
-    hoursInput.setAttribute("name", "hours");
-    hoursInput.classList.add('user-input'); 
-    document.getElementById("hours").append(hoursContext, hoursInput);
+        let petsLabel = document.createElement("label");
+        let petsContext = document.createElement("span");
+        petsContext.textContent = "pet friendly";
+        let petsInput = document.createElement("input");
+        petsInput.setAttribute("type", "checkbox");
+        petsInput.setAttribute("name", "pets");
+        petsInput.classList.add("filled-in");
+        petsLabel.append(petsInput, petsContext);
+        document.getElementById("pets").append(petsLabel);
 
-    let avatarDisplayWrapper = document.getElementById('user-display-row');
-    avatarDisplayWrapper.style.display = "none";
-    // while (avatarDisplayWrapper.firstChild) avatarDisplayWrapper.removeChild(avatarDisplayWrapper.firstChild);
-    let avatarRow = document.getElementById("avatar-options-row");
-    avatarRow.style.display = "inline-block";
-    let cancelButton = document.getElementById("cancel");
-    let confirmButton = document.getElementById("confirm");
-    let editButton = document.getElementById('edit');
-    editButton.style.display="none";
-    cancelButton.style.display="inline-block";
-    confirmButton.style.display="inline-block";
-}
-function cancelEditing(){
-    let avatarDisplayWrapper = document.getElementById('user-display-row');
-    avatarDisplayWrapper.style.display = "inline-block";
-    // while (avatarDisplayWrapper.firstChild) avatarDisplayWrapper.removeChild(avatarDisplayWrapper.firstChild);
-    let avatarRow = document.getElementById("avatar-options-row");
-    avatarRow.style.display = "none";
-    let cancelButton = document.getElementById("cancel");
-    let confirmButton = document.getElementById("confirm");
-    let editButton = document.getElementById('edit');
-    editButton.style.display="inline-block";
-    cancelButton.style.display="none";
-    confirmButton.style.display="none";
-    profileCall();
-}
+        let ageContext = document.createElement('p');
+        ageContext.textContent = 'Age: ';
+        let ageInput = document.createElement("input");
+        ageInput.setAttribute("value", obj.age);
+        ageInput.setAttribute("name", "age");
+        ageInput.classList.add('user-input');
+        document.getElementById("age").append(ageContext, ageInput);
 
-function confirmEdits(){
-    console.log(userObject);
-    let userName = document.getElementById('user-name').lastChild.value;
-    let address = document.getElementById('address').lastChild.value;
-    let contactEmail = document.getElementById('contact-email').lastChild.value;
-    let imgUrl = document.getElementById('img-url').lastChild.value;
-    let summary = document.getElementById('summary').lastChild.value;
-    let plants = document.getElementById('plants').lastChild.value;
-    let hasGarden = document.getElementById("has-garden").firstChild.firstChild.checked;
-    let needsGarden = document.getElementById("needs-garden").firstChild.firstChild.checked;
-    let organic = document.getElementById("organic").firstChild.firstChild.checked;
-    let pets = document.getElementById("pets").firstChild.firstChild.checked;
-    let age = document.getElementById('age').lastChild.value;
-    let hours = document.getElementById('hours').lastChild.value;
-    let avatar = document.querySelector('input[name="avatar"]:checked').value;
+        let hoursContext = document.createElement('p');
+        hoursContext.textContent = 'Hours available/needed: ';
+        let hoursInput = document.createElement("input");
+        hoursInput.setAttribute("value", obj.hours);
+        hoursInput.setAttribute("type", "number");
+        hoursInput.setAttribute("name", "hours");
+        hoursInput.classList.add('user-input');
+        document.getElementById("hours").append(hoursContext, hoursInput);
 
-    userObject.userName = userName;
-    userObject.address = address;
-    userObject.contactEmail = contactEmail;
-    userObject.imgUrl = imgUrl;
-    userObject.summary= summary;
-    userObject.plants = plants;
-    userObject.hasGarden = hasGarden;
-    userObject.needsGarden = needsGarden;
-    userObject.organic = organic;
-    userObject.pets = pets;
-    userObject.age = age;
-    userObject.hours = hours;
-    userObject.avatar= avatar;
+        let avatarDisplayWrapper = document.getElementById('user-display-row');
+        avatarDisplayWrapper.style.display = "none";
+        // while (avatarDisplayWrapper.firstChild) avatarDisplayWrapper.removeChild(avatarDisplayWrapper.firstChild);
+        let avatarRow = document.getElementById("avatar-options-row");
+        avatarRow.style.display = "inline-block";
+        let cancelButton = document.getElementById("cancel");
+        let confirmButton = document.getElementById("confirm");
+        let editButton = document.getElementById('edit');
+        editButton.style.display = "none";
+        cancelButton.style.display = "inline-block";
+        confirmButton.style.display = "inline-block";
+    }
+    function cancelEditing() {
+        let avatarDisplayWrapper = document.getElementById('user-display-row');
+        avatarDisplayWrapper.style.display = "inline-block";
+        // while (avatarDisplayWrapper.firstChild) avatarDisplayWrapper.removeChild(avatarDisplayWrapper.firstChild);
+        let avatarRow = document.getElementById("avatar-options-row");
+        avatarRow.style.display = "none";
+        let cancelButton = document.getElementById("cancel");
+        let confirmButton = document.getElementById("confirm");
+        let editButton = document.getElementById('edit');
+        editButton.style.display = "inline-block";
+        cancelButton.style.display = "none";
+        confirmButton.style.display = "none";
+        profileCall();
+    }
 
-    console.log(userObject);
-}
+    function confirmEdits() {
+        console.log(userObject);
+        let userName = document.getElementById('user-name').lastChild.value;
+        let address = document.getElementById('address').lastChild.value;
+        let contactEmail = document.getElementById('contact-email').lastChild.value;
+        let imgUrl = document.getElementById('img-url').lastChild.value;
+        let summary = document.getElementById('summary').lastChild.value;
+        let plants = document.getElementById('plants').lastChild.value;
+        let hasGarden = document.getElementById("has-garden").firstChild.firstChild.checked;
+        let needsGarden = document.getElementById("needs-garden").firstChild.firstChild.checked;
+        let organic = document.getElementById("organic").firstChild.firstChild.checked;
+        let pets = document.getElementById("pets").firstChild.firstChild.checked;
+        let age = document.getElementById('age').lastChild.value;
+        let hours = document.getElementById('hours').lastChild.value;
+        let avatar = document.querySelector('input[name="avatar"]:checked').value;
+        if (userName && address && contactEmail && imgUrl && summary && plants && age && hours) {
 
+            userObject.userName = userName;
+            userObject.address = address;
+            userObject.contactEmail = contactEmail;
+            userObject.imgUrl = imgUrl;
+            userObject.summary = summary;
+            userObject.plants = plants;
+            userObject.hasGarden = hasGarden;
+            userObject.needsGarden = needsGarden;
+            userObject.organic = organic;
+            userObject.pets = pets;
+            userObject.age = age;
+            userObject.hours = hours;
+            userObject.avatar = avatar;
+
+            console.log(userObject);
+            putAjax('/api/update-user/' + userObject.id, userObject, function (data) {
+                console.log(data);
+                window.location.assign('/profile');
+
+
+            })
+        } else {
+            alert('please put something for every option.');
+        }
+    }
+
+
+    function putAjax(url, data, success) {
+        var params = typeof data == 'string' ? data : Object.keys(data).map(
+            function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }
+        ).join('&');
+
+        var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+        xhr.open('PUT', url);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState > 3 && xhr.status == 200) { success(xhr.responseText); }
+        };
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send(params);
+        return xhr;
+    }
 
 
 
