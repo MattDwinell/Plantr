@@ -1,3 +1,33 @@
 .nav-wrapper{
     background-color: #4e342e;
 }
+body{
+    background-color:#8d6e63;
+    opacity: 1;
+    transition: 1s opacity;  
+    font-weight: 550;
+}
+.post-wrapper{
+    margin: 10px auto;
+    background-color: #e8f5e9 ;
+    border: 2px solid #00e676;;
+    border-radius: 3px;
+}
+.post-wrapper p{
+    position: absolute;
+    right: 10vw;
+    margin-right: 3vw;
+    display: inline-block;
+    text-align: left;
+    color: #4e342e;
+}
+.post-wrapper h3{
+    margin-left: 5px;
+    margin-top: 0px;
+    display: inline-block;
+}
+.post-wrapper div{
+    display: block;
+    padding: 2px;
+    margin: 5px;
+}

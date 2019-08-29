@@ -1,6 +1,15 @@
 var userProfiles = require("../models/user-profiles.js");
+var posts = require("../models/posts.js");
 const Sequelize = require('sequelize');
 module.exports = function (app) {
+    app.get("/api/posts", (req,res)=>{
+        posts.findAll()
+        .then((result)=>{
+            return res.json(result);
+        })
+    })
+
+
     app.get("/api/user-profiles/:user", (req, res) => {
         const { user } = req.params;
         userProfiles.findAll({
