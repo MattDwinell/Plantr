@@ -15,7 +15,7 @@ body{
 }
 .post-wrapper p{
     position: absolute;
-    right: 10vw;
+    right: 20vw;
     margin-right: 3vw;
     display: inline-block;
     text-align: left;
@@ -30,4 +30,22 @@ body{
     display: block;
     padding: 2px;
     margin: 5px;
+}
+#postform{
+    margin-top: 10px;
+    display: none;
+    background-color: #e8f5e9;
+}
+#postform textarea{
+    max-width: 100%;
+    height: 20vh;
+    min-width: 100%;
+}
+#new-post{
+margin: 10px auto;
+}
+#submit-post{
+    display: inline-block;
+ margin: 5px;
+ padding: 2px;
 }

@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
             obj.pets = 'No';
         }
         console.log(obj);
+        window.localStorage.setItem('username', obj.userName);
         divEmpty();
 
         let userName = document.createElement("p");

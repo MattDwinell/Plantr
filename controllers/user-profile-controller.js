@@ -8,6 +8,17 @@ module.exports = function (app) {
             return res.json(result);
         })
     })
+    app.post("/api/posts", (req,res)=>{
+        const {title, message, user} = req.body;
+        posts.create({
+            user: user,
+            message: message,
+            title: title
+        })
+        .then((result)=>{
+            return res.json(result);
+        })
+    })
 
 
     app.get("/api/user-profiles/:user", (req, res) => {
