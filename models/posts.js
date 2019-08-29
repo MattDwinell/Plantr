@@ -6,11 +6,12 @@ var posts = sequelize.define('posts',{
     title: Sequelize.STRING
 },
 {freezeTableName: true});
-posts.sync().then(
-    posts.create({
-        user: 'admin',
-        message: 'welcome to plantr public posts! we hope you enjoy your visit here. grow with us!',
-        title: 'welcome'
-    })
-);
+ posts.sync();
+//  .then(
+//     posts.create({
+//         user: 'admin',
+//         message: 'welcome to plantr public posts! we hope you enjoy your visit here. grow with us!',
+//         title: 'welcome'
+//     })
+// );
 module.exports = posts;

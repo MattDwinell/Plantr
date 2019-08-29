@@ -19,22 +19,23 @@ var userProfiles = sequelize.define("userProfiles", {
 }, {
   freezeTableName: true
 });
-userProfiles.sync().then(
-    userProfiles.create({
-        email: 'testing@gmail.com',
-        contactEmail: 'contactEmail@hotmail.com',
-        userName: 'userName',
-        address: 'address',
-        imageUrl: 'imageUrl',
-        summary: 'summary goes here',
-        plants: 'carrots and stuff',
-        hasGarden: true,
-        needsGarden: false,
-        organic: true,
-        pets: false,
-        age: 20,
-        hours: 5,
-        avatar: "rake"
-    })
-);
+userProfiles.sync();
+// .then(
+//     userProfiles.create({
+//         email: 'testing@gmail.com',
+//         contactEmail: 'contactEmail@hotmail.com',
+//         userName: 'userName',
+//         address: 'address',
+//         imageUrl: 'imageUrl',
+//         summary: 'summary goes here',
+//         plants: 'carrots and stuff',
+//         hasGarden: true,
+//         needsGarden: false,
+//         organic: true,
+//         pets: false,
+//         age: 20,
+//         hours: 5,
+//         avatar: "rake"
+//     })
+// );
 module.exports = userProfiles;
