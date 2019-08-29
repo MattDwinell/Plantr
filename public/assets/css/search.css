@@ -70,8 +70,18 @@
     background-color:#8d6e63;
    }
 
-
-
+   #card-modal{
+    position: fixed;
+    z-index: 100;
+    width: 70%;
+    height: 70vh;
+    display: block;
+    left: 20vw;
+    top: 20vh;
+    border: 2px solid #efebe9;
+    border-radius: 2px;
+    
+}
    .card-wrapper:hover{
        cursor: pointer;
    }

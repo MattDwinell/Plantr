@@ -85,7 +85,7 @@ function postsPopulate(array){
     console.log(array);
     array.map((obj)=>{
         let postWrapper = document.createElement("div");
-        postWrapper.classList.add("post-wrapper");
+        postWrapper.classList.add("post-wrapper")
         let title = document.createElement('h3');
         title.textContent = obj.title;
         let userName = document.createElement("p");

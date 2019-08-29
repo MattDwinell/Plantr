@@ -5,7 +5,7 @@ var posts = sequelize.define('posts',{
     message: Sequelize.TEXT,
     title: Sequelize.STRING
 },
-{freezeTableName: false});
+{freezeTableName: true});
 posts.sync().then(
     posts.create({
         user: 'admin',

@@ -17,7 +17,7 @@ var userProfiles = sequelize.define("userProfiles", {
     avatar: Sequelize.STRING
 
 }, {
-  freezeTableName: false
+  freezeTableName: true
 });
 userProfiles.sync().then(
     userProfiles.create({

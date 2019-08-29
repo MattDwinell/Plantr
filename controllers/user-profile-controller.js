@@ -31,6 +31,16 @@ module.exports = function (app) {
             return res.json(result);
         })
     })
+    app.get("/api/user-ids/:id", (req, res) => {
+        const { id } = req.params;
+        userProfiles.findAll({
+            where: {
+                id: id
+            }
+        }).then((result) => {
+            return res.json(result);
+        })
+    })
 
     app.post("/api/new-user", (req, res) => {
         const { email, userName, address, contactEmail, imageUrl, summary, plants, hasGarden, needsGarden, organic, pets, age, hours, avatar } = req.body;

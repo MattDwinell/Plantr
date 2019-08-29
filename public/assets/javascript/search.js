@@ -11,10 +11,35 @@ document.addEventListener("DOMContentLoaded", () => {
         if (event.target.matches("#search")) {
             event.preventDefault();
             searchBarParams();
+        } else if (event.target.matches(".card-wrapper")){
+            event.preventDefault();
+            console.log(event.target);
+            let id = event.target.getAttribute("data-id");
+            profilePull(id);
         } else {
             return false;
         }
     })
+
+
+    function profilePull(id){
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                console.log('success!', xhr);
+                let userArray = JSON.parse(xhr.response);
+                 cardModal(userArray[0]);
+            
+            } else {
+               return console.log(xhr, xhr.status);
+            }
+        };
+        xhr.open('GET', '/api/user-ids/' + id);
+        xhr.send();
+    }  
+    function cardModal(userObject){
+        console.log(userObject);
+    }
 
 
     //pulling in values from search bar
@@ -83,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
         array.map((obj) => {
             let tempCardWrapper = document.createElement("div");
             tempCardWrapper.classList.add('card-wrapper');
+            tempCardWrapper.setAttribute("data-id", obj.id);
             let userName = document.createElement("div");
             userName.classList.add('user-name');
             userName.textContent = obj.userName;
