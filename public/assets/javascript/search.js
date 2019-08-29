@@ -16,11 +16,26 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(event.target);
             let id = event.target.getAttribute("data-id");
             profilePull(id);
+        } else if (event.target.matches("#close")){
+            event.preventDefault();
+            modalClose();
+        } else if (event.target.matches("#connect")){
+            openEmail();
+
         } else {
             return false;
         }
     })
+function openEmail(){
+    let contactEmail = document.getElementById("card-user-name").getAttribute("contact-email");
+    console.log(contactEmail);
+    let connect = document.getElementById("connect");
+    connect.setAttribute("href", "mailto:" + contactEmail + "?Subject=Hello_from_PlantR");
+}
 
+function modalClose(){
+    document.getElementById("card-modal").style.display="none";
+}
 
     function profilePull(id){
         let xhr = new XMLHttpRequest();
@@ -39,6 +54,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }  
     function cardModal(userObject){
         console.log(userObject);
+        let userName = document.getElementById("card-user-name");
+        userName.setAttribute("contact-email", userObject.contactEmail);
+        let summary = document.getElementById("user-summary");
+        userName.textContent = userObject.userName;
+        summary.textContent= userObject.summary;
+        let connect = document.getElementById("connect");
+        connect.setAttribute("href", "mailto:" + userName.getAttribute("contact-email") + "?Subject=Hello_from_PlantR");
+        document.getElementById("card-modal").style.display="block";
     }
 
 

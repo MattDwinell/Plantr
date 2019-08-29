@@ -75,13 +75,40 @@
     z-index: 100;
     width: 70%;
     height: 70vh;
-    display: block;
+    display: none;
     left: 20vw;
     top: 20vh;
     border: 2px solid #efebe9;
     border-radius: 2px;
+    background-color: #c8e6c9;
+ 
     
 }
    .card-wrapper:hover{
        cursor: pointer;
    }
+   #card-user-name{
+       font-weight: bold;
+       position: absolute;
+       top: 10px;
+       left:40%;
+
+   }
+   #user-summary{
+    font-weight: bold;
+    position: absolute;
+    top: 20vh;
+    left:10%;
+
+   }
+   #connect{
+      position: absolute;
+      left:0px;
+      top: 0px; 
+   }
+   #close{
+       position: absolute;
+       right: 0px;
+       top: 0px;
+   }
+   
