@@ -97,7 +97,6 @@ module.exports = function (app) {
         console.log(userEmail, distance);
         userProfiles.findAll({
             where: {
-                hasGarden: garden,
                 organic: organic,
                 pets: pets,
                 email: { [Sequelize.Op.not]: userEmail }
