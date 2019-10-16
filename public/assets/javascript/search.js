@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (event.target.matches("#search")) {
             event.preventDefault();
             searchBarParams();
-        } else if (event.target.matches(".card-wrapper")){
+        } else if (event.target.matches(".card-wrapper") || event.target.matches(".card-wrapper")){
             event.preventDefault();
             console.log(event.target);
             let id = event.target.getAttribute("data-id");
@@ -60,6 +60,20 @@ function modalClose(){
         userName.textContent = userObject.userName;
         summary.textContent= userObject.summary;
         let connect = document.getElementById("connect");
+        let userAvatar = document.getElementById("user-avatar");
+        let userImG = document.getElementById("user-pic");
+        if(userObject.imageUrl && (userObject.imageUrl.includes("http"))){
+            userImG.setAttribute("src", userObject.imageUrl);}
+            else { userImG.setAttribute("src", "/assets/images/pot.png");}
+        if (userObject.avatar == 'rake') {
+            userAvatar.setAttribute("src", "/assets/images/rake.png");
+        } else if (userObject.avatar == 'pot') {
+            userAvatar.setAttribute("src", "/assets/images/pot.png");
+        } else if (userObject.avatar == 'pail') {
+            userAvatar.setAttribute("src", "/assets/images/garden_pail.png");
+        } else if (userObject.avatar == 'spade') {
+            userAvatar.setAttribute("src", "/assets/images/trowel.png");
+        }
         connect.setAttribute("href", "mailto:" + userName.getAttribute("contact-email") + "?Subject=Hello_from_PlantR");
         document.getElementById("card-modal").style.display="block";
     }
@@ -149,11 +163,11 @@ function modalClose(){
             if (obj.avatar == 'rake') {
                 avatar.setAttribute("src", "/assets/images/rake.png");
 
-            } else if (obj.avatar = 'pot') {
+            } else if (obj.avatar == 'pot') {
                 avatar.setAttribute("src", "/assets/images/pot.png");
-            } else if (obj.avatar = 'pail') {
+            } else if (obj.avatar == 'pail') {
                 avatar.setAttribute("src", "/assets/images/garden_pail.png");
-            } else if (obj.avatar = 'spade') {
+            } else if (obj.avatar == 'spade') {
                 avatar.setAttribute("src", "/assets/images/trowel.png");
             }
             imgWrapper.append(avatar);
